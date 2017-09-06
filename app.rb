@@ -19,8 +19,8 @@ before do
 end
 
 get '/' do
-	#@posts = Post.order "created_at DESC"
-	erb "HI"
+	@posts = Post.order "created_at DESC"
+	erb '-----'
 end
 
 get '/new' do

@@ -1,0 +1,30 @@
+<h4>Post text:</h4>
+<br />
+
+<p> <%= @p.content %></p>
+<br />
+<p style="font-size: 80%; color: #777" align="right"> Added at <%= @p.created_at %></p>
+<br />
+
+<h4>Comments:</h4>
+<br />
+
+<% @comments.each do |comment| %>
+	<hr />
+	<p><%= comment.content %></p>
+	<p style="font-size: 75%; color: #999" align="right"><%= comment.created_at %></p>
+<% end %>
+<hr />
+<br />
+
+<form action="/post-<%= @p.id %>" method="POST" role="form">
+	<div class="form-group">
+		<label for="input-name">Enter your Name:</label>
+		<input name="comment[username]" type="text" class="form-control" id="input-name" placeholder="Enter your Name" value="<%= %>">
+	</div>
+	<div class="form-group">
+		<textarea name="content" class="form-control" rows="3" placeholder="Write comment text here"></textarea>
+		<br />
+		<button type="submit" class="btn btn-success">Add comment</button>
+	</div>	
+</form>

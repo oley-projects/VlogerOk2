@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
   	create_table :posts do |t|
   		t.text :username
   		t.text :content
-  		t.timestamp
+  		t.timestamps
   	end
   end
 end

@@ -1,0 +1,11 @@
+<h3>Posts list</h3>
+<br />
+<% @posts.each do |post|%>
+	<p style="font-size: 85%; color: #759"><%= post.username %></p>
+	<p><%= post.content %></p>
+	<br />
+	<a href="post-<%=post.id%>">Comments</a>
+	<br />
+	<p style="font-size: 80%" align="right"> Added at <%= post.created_at %></p>
+	<hr />
+<% end %>

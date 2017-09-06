@@ -23,6 +23,6 @@ get '/' do
 	erb "HI"
 end
 
-get '/add' do
-
+get '/new' do
+	erb :new
 end

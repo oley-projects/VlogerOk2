@@ -1,8 +1,28 @@
-#encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/activerecord'
+
+set :database, "sqlite3:vlogerok.db"
+
+class Post < ActiveRecord::Base
+
+end
+
+class Commemt < ActiveRecord::Base
+
+end
+
+before do
+	@posts = Post.all
+	#@commemts = Commemt.all
+end
 
 get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+	#@posts = Post.order "created_at DESC"
+	erb "HI"
+end
+
+get '/add' do
+
 end
